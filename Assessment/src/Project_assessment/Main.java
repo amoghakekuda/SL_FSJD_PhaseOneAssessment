@@ -1,37 +1,61 @@
 package Project_assessment;
+import java.io.IOException;
 import java.util.*;
 
 public class Main {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Scanner sc= new Scanner(System.in);
 		OpDef op = new OpDef();
 		op.Welcome();
 		int choice = sc.nextInt();
-		String yn;
+		int choice2;
 		
-		while (choice!=5)
+		String yn,fn;
+		
+		while (choice!=3)
 		{
 			switch (choice)
 			{
 				case 1:
 				{
 					System.out.println("Choice 1");
+					op.Showfiles();
 					break;
 				}
 				case 2:
 				{
-					System.out.println("Choice 2");
+					System.out.println("1.Add\n2.Delete\n3.Search");
+					choice2=sc.nextInt();
+					switch (choice2)
+					{
+					case 1:
+					{
+						System.out.println("Enter file name to add: ");
+						fn = sc.next();
+						op.createfile(fn);
+						break;
+					}
+					case 2:
+					{
+						System.out.println("Enter file name to delete: ");
+						fn = sc.next();
+						op.deletefile(fn);
+						break;
+					}
+					case 3:
+					{
+						System.out.println("Enter file name to Search: ");
+						fn = sc.next();
+						op.searchfile(fn);
+						break;
+					}
+					}
 					break;
 				}
 				case 3:
 				{
 					System.out.println("Choice 3");
-					break;
-				}
-				case 4:
-				{
-					System.out.println("Choice 4");
 					break;
 				}
 			}
@@ -52,7 +76,7 @@ public class Main {
 			}
 			else
 			{
-				choice=5;
+				choice=3;
 			}
 			}
 		System.out.println("Thank you for using the application!");

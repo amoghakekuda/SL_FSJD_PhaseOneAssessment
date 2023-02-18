@@ -1,11 +1,22 @@
 package Project_assessment;
 
 import java.io.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class OpDef extends operations {
 	
 	Scanner sc = new Scanner(System.in);
+	File f = new File("C:\\Phase1_Project");
+	String fn;
+	
+	String[] files = f.list();
+    List<String> fl = new ArrayList<>(Arrays.asList(files));
+	
+	 
 	
 	void Welcome() {
         System.out.println("**************************************");
@@ -15,27 +26,36 @@ public class OpDef extends operations {
         System.out.println("**************************************");
         System.out.println("\n");
         System.out.println("User Interface: ");
-        System.out.println("1. Create a File to the Directory");
-        System.out.println("2. Delete a File from the Directory");
-        System.out.println("3. Search a File in the Directory");
-        System.out.println("4. Close the Application");
+        System.out.println("1. Show Files");
+        System.out.println("2. Create/Delete/Search Files");
+        System.out.println("3. Close the Application");
         System.out.println("\n");
         System.out.print("Enter your choice: ");
 	}
 	
 	void RepeatedChoice() {
-		System.out.println("User Interface: ");
-        System.out.println("1. Create a File to the Directory");
-        System.out.println("2. Delete a File from the Directory");
-        System.out.println("3. Search a File in the Directory");
-        System.out.println("4. Close the Application");
-        System.out.println("\n");
-        System.out.print("Enter your choice: ");		
+		 System.out.println("User Interface: ");
+	        System.out.println("1. Show Files");
+	        System.out.println("2. Create/Delete/Search Files");
+	        System.out.println("3. Close the Application");
+	        System.out.println("\n");
+	        System.out.print("Enter your choice: ");	
 	}
 
-	public File createfile() {
-		// TODO Auto-generated method stub
-		return null;
+	public void createfile(String s) throws IOException, FileNotFoundException {
+		this.fn=s;
+		
+		File nf = new File("C:\\Phase1_Project\\"+fn+".txt");
+		if (nf.exists())
+		{
+			System.out.println("File already exists!");
+		}
+		else
+		{
+			nf.createNewFile();
+			this.fl.add(fn);
+		}
+		
 	}
 
 	public File addfile() {
@@ -43,10 +63,63 @@ public class OpDef extends operations {
 		return null;
 	}
 
-	public File deletefile() {
-		// TODO Auto-generated method stub
-		return null;
+	public void deletefile(String s) throws IOException, FileNotFoundException {
+		this.fn=s;
+		
+		File nf = new File("C:\\Phase1_Project\\"+fn+".txt");
+		if (nf.exists())
+		{
+			nf.delete();
+			this.fl.remove(fn);
+			System.out.println("File Deleted");
+		}
+		else
+		{
+			System.out.println("File does not exist");
+		}
 	}
+	
+	public void Showfiles() {
+		fl.sort(null);
+		if (fl.isEmpty())
+		{
+			System.out.println("No Folders to Display");		
+		}
+		else
+		{
+			for(String s: fl)
+			{
+				System.out.println(s);
+			}
+		}
+		
+	}
+	
+	public void searchfile(String s) throws IOException, FileNotFoundException {
+		
+		this.fn=s;
+		
+		File nf = new File("C:\\Phase1_Project\\"+fn+".txt");
+		if (nf.exists())
+		{
+			System.out.println("File Exists!");
+		}
+		else
+		{
+			System.out.println("File does not exist");
+		}
+		
+	}
+	
+	public OpDef() {                 //Constructor
+		File f = new File("C:\\Phase1_Project");
+		if (f.exists()==false)
+		{
+			f.mkdir();
+		}
+	}
+
+	
 
 	
 
