@@ -25,21 +25,27 @@ public class OpDef extends operations {
         System.out.println("* Developer: Amogha Kekuda *");
         System.out.println("**************************************");
         System.out.println("\n");
+        System.out.println("--------------------------------------");
         System.out.println("User Interface: ");
         System.out.println("1. Show Files");
         System.out.println("2. Create/Delete/Search Files");
         System.out.println("3. Close the Application");
+        System.out.println("--------------------------------------");
         System.out.println("\n");
         System.out.print("Enter your choice: ");
 	}
 	
 	void RepeatedChoice() {
-		 System.out.println("User Interface: ");
+			System.out.println("--------------------------------------");
+			System.out.println("\n");
+		 	System.out.println("User Interface: ");
 	        System.out.println("1. Show Files");
 	        System.out.println("2. Create/Delete/Search Files");
 	        System.out.println("3. Close the Application");
+	        System.out.println("--------------------------------------");
 	        System.out.println("\n");
 	        System.out.print("Enter your choice: ");	
+	        
 	}
 
 	public void createfile(String s) throws IOException, FileNotFoundException {
@@ -87,6 +93,7 @@ public class OpDef extends operations {
 		}
 		else
 		{
+			System.out.println("\nFiles in the folder:");
 			for(String s: fl)
 			{
 				System.out.println(s);
