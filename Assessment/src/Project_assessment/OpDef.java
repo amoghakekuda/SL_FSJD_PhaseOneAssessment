@@ -54,7 +54,7 @@ public class OpDef extends operations {
 		File nf = new File("C:\\Phase1_Project\\"+fn+".txt");
 		if (nf.exists())
 		{
-			System.out.println("File already exists!");
+			System.out.println("File already exists!\n");
 		}
 		else
 		{
