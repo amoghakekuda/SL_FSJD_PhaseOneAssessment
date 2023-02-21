@@ -59,6 +59,7 @@ public class OpDef extends operations {
 		else
 		{
 			nf.createNewFile();
+			System.out.println("File created!\n");
 			this.fl.add(fn);
 		}
 		
@@ -125,8 +126,18 @@ public class OpDef extends operations {
 			f.mkdir();
 		}
 	}
-
 	
+	public String yesno() {
+		String q = sc.next();
+		
+		while ((!q.equalsIgnoreCase("yes"))&&(!q.equalsIgnoreCase("no")))
+		{
+			System.out.println("Invalid Entry, Try again");
+			q = sc.next();
+		}
+		
+		return q;	
+	}
 
 	
 

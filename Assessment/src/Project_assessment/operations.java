@@ -13,5 +13,6 @@ abstract class operations {
 	abstract public void deletefile(String s)throws IOException, FileNotFoundException;
 	abstract public void Showfiles();
 	abstract public void searchfile(String s)throws IOException, FileNotFoundException;
+	abstract public String yesno();
 	
 }
