@@ -33,7 +33,7 @@ public class Main {
 			}
 			case "2":
 			{
-				System.out.println("\n1.Add\n2.Delete\n3.Search\n4.Main Menu\n5.Exit");
+				System.out.println("\n1.Add\n2.Delete\n3.Search\n4.Main Menu\n5.Exit\n");
 				Choice2 = sc.next();
 				
 				while ((!Choice2.equals("1"))&&(!Choice2.equals("2"))&&(!Choice2.equals("3"))&&(!Choice2.equals("4"))&&(!Choice2.equals("5")))
@@ -70,11 +70,11 @@ public class Main {
 					}
 					if ((Choice2.equals("1"))||(Choice2.equals("2"))||(Choice2.equals("3")))
 					{
-						System.out.println("\nWould you like to go back to the Previous menu?");
+						System.out.println("\nWould you like to go back to the Previous menu?\n");
 						R = op.yesno();
 						if (R.equalsIgnoreCase("yes"))
 						{
-							System.out.println("\n1.Add\n2.Delete\n3.Search\n4.Main Menu\n5.Exit");
+							System.out.println("\n1.Add\n2.Delete\n3.Search\n4.Main Menu\n5.Exit\n");
 							Choice2=sc.next();
 						}
 						else
@@ -101,7 +101,7 @@ public class Main {
 			}
 			if (exit==false )
 			{
-				System.out.println("\nWould you like to go back to the main menu?(Yes/No)");
+				System.out.println("\nWould you like to go back to the main menu?(Yes/No)\n");
 				R=op.yesno();
 				if (R.equalsIgnoreCase("yes"))
 				{

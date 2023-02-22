@@ -16,7 +16,6 @@ public class OpDef extends operations {
 	String[] files = f.list();
     List<String> fl = new ArrayList<>(Arrays.asList(files));
 	
-	 
 	
 	void Welcome() {
         System.out.println("**************************************");
@@ -64,11 +63,7 @@ public class OpDef extends operations {
 		}
 		
 	}
-
-	public File addfile() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	public void deletefile(String s) throws IOException, FileNotFoundException {
 		this.fn=s;
@@ -94,7 +89,7 @@ public class OpDef extends operations {
 		}
 		else
 		{
-			System.out.println("\nFiles in the folder:");
+			System.out.println("\nFiles in the folder:\n");
 			for(String s: fl)
 			{
 				System.out.println(s);
@@ -110,11 +105,11 @@ public class OpDef extends operations {
 		File nf = new File("C:\\Phase1_Project\\"+fn+".txt");
 		if (nf.exists())
 		{
-			System.out.println("File Exists!");
+			System.out.println("File Exists!\n");
 		}
 		else
 		{
-			System.out.println("File does not exist");
+			System.out.println("File does not exist\n");
 		}
 		
 	}
@@ -132,13 +127,11 @@ public class OpDef extends operations {
 		
 		while ((!q.equalsIgnoreCase("yes"))&&(!q.equalsIgnoreCase("no")))
 		{
-			System.out.println("Invalid Entry, Try again");
+			System.out.println("Invalid Entry, Try again\n");
 			q = sc.next();
 		}
 		
 		return q;	
-	}
-
-	
+	}	
 
 }
